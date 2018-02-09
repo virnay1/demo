@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Session 3</title>
+    <style>
+      .selected{
+        background-color:#ccaacc;
+        border-color:red;
+        border-width:2px;
+      }
+    </style>   
+  </head>
+  <body>
+    <p>
+      Name <input type="text" id="name"/>
+    </p>
+    <p>
+      Email <input type="text" id="email"/>
+    </p>
+    <p>
+      <input type="button" id="b1" value = "ok"/>
+    </p>
+    <p id="result"></p>
+    <script src="jquery-3.3.1.js"></script>  
+    <script>
+      $("input[type=text]").hover(function(){
+        $(this).toggleClass("selected");
+      });   
+     $("#b1").focus(function(){
+       //$(this).css("color","red");
+       var cssSetting = {"color":"red","font-size":"14pt"};
+       $(this).css(cssSetting);
+     });
+     $("#b1").click(function(){
+       var name = $("#name").val();
+       var email = $("#email").val();
+       $("#result").html("Name : " + name);
+     });
+    </script>
+  </body>
+</html>
