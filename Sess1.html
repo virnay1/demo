@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Session 1</title>
+    <style>
+      .message{
+        font-family:'Calibri';
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="message">
+    </p>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+      $("#message")
+          .html("Hi from Viren")
+          .addClass("message")
+          .fadeOut(9566);
+    </script>
+  </body>
+</html>
