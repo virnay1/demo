@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Session 2</title>
+    <style>
+      .oddItem{
+        background-color:yellow;
+        color:red;
+      }
+    </style>
+    <script src="jquery-3.3.1.js"></script>  
+    <script>
+      
+      $(function(){
+        var people = ["abc","pqr","xyz"];
+        $("#message").html("People List");
+        $.each(people,function(index,value){       
+          $("#people").append("<li>"+value+"</li>");
+        });
+        var message = "Displaying : " + people.length 
+                       + " records";
+        $("<p>" +message +"</p>").insertAfter("#people");
+        $.fn.makeRed = function(){       
+          alert(this);
+        };
+
+        $("#people li:even").addClass("oddItem");
+        //$("#message").makeRed();
+
+      });      
+    </script>
+  </head>
+  <body>
+    <p id="message">
+    </p>
+    <div style="width:200px">
+      <ul id="people">
+      </ul> 
+    </div>
+  </body>
+</html>
